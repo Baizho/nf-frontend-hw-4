@@ -17,7 +17,7 @@ axiosProduct.interceptors.response.use((response) => {
 })
 
 const axiosFile = axios.create ( {
-    baseURL: "https://api.escuelajs.co/api/v1",
+    baseURL: "https://api.escuelajs.co/api/v1/files",
 })
 
 axiosFile.interceptors.request.use(config => {
