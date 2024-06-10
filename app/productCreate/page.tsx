@@ -172,7 +172,7 @@ const ProductCreatePage = (props: Props) => {
             >
               {photo.map((card: photoProps, index: number) => {
                 return (
-                  <div className="flex flex-col gap-4 w-32 h-full">
+                  <div key={index} className="flex flex-col gap-4 w-32 h-full">
                     {/* <label className="h-[128px] w-[128px] bg-gray-300 cursor-pointer">
                       <input
                         className="hidden"

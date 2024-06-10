@@ -18,18 +18,18 @@ type ProductProps = {
 
 const CategoryPage = (props: Props) => {
   const { category } = useParams();
-  if (typeof category !== "string") {
-    return <div></div>;
-  }
   const { data, error, isLoading, isError } = useQuery({
     queryKey: ["CategoriesProductData"],
-    queryFn: () => getCategory(category),
+    queryFn: () => getCategory(typeof category === "string" ? category : ""),
   });
   if (isLoading)
     return <div className="text-center">Categories are loading...</div>;
   if (isError) {
     console.log(error);
     return <div className="text-center">Sorry there was an error</div>;
+  }
+  if (typeof category !== "string") {
+    return <div></div>;
   }
   //   console.log(data);
   return (
